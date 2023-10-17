@@ -1,0 +1,37 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/Assets/fonts/BentonSans-Black.otf",
+      "sha1": "10dde8cc309a9d58434440677e2c9295e970c413"
+    },
+    {
+      "path": "src/Assets/fonts/BentonSans-Bold.otf",
+      "sha1": "9581db913868b1266f9a9bee9928012fc2d855bf"
+    },
+    {
+      "path": "src/Assets/fonts/BentonSans-Book.otf",
+      "sha1": "e76ad790c99aed4648f1790aec0bdee66949cca5"
+    },
+    {
+      "path": "src/Assets/fonts/BentonSans-Medium.otf",
+      "sha1": "b1f1ebf2664b3c8d629585f3b9bddc8c7a4cd846"
+    },
+    {
+      "path": "src/Assets/fonts/BentonSans-Regular.otf",
+      "sha1": "30af182ebe647f450c7db739f426419b437476df"
+    },
+    {
+      "path": "src/Assets/fonts/Inter-Medium.ttf",
+      "sha1": "a418a8ba73bbcfa8c131c426ab836d78457afa9b"
+    },
+    {
+      "path": "src/Assets/fonts/Inter-SemiBold.ttf",
+      "sha1": "431007da316de60d85174aeec9b8389b5c73e7d6"
+    },
+    {
+      "path": "src/Assets/fonts/Viga-Regular.ttf",
+      "sha1": "bad34f2b54650993d29b6f0a115b9865c336774b"
+    }
+  ]
+}
