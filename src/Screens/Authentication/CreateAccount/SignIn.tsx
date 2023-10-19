@@ -1,11 +1,11 @@
 import * as React from 'react';
-import {Image, Text, View, Pressable} from 'react-native';
+import {Image, View} from 'react-native';
 
-import {BackgroundPattern, checkIcon, checkedIcon} from '@src/Assets';
+import {BackgroundPattern} from '@src/Assets';
 import {AuthNavigationProps} from '@src/Routes/Navigation';
 
 import {useCreateAccountStyle} from './createAccount.styles';
-import {BackButton, Button, Input, LogoWithText} from '@src/Components';
+import {Button, Checkbox, Input, LogoWithText} from '@src/Components';
 import LinearGradient from 'react-native-linear-gradient';
 import {ThemedText} from '@src/Config/Theme';
 
@@ -26,7 +26,9 @@ export const SignIn = ({navigation}: AuthNavigationProps<'SignIn'>) => {
       />
       <LogoWithText />
       <View>
-        <ThemedText variant="title">Sign Up for free</ThemedText>
+        <ThemedText variant="title" marginBottom="l">
+          Sign Up for free
+        </ThemedText>
       </View>
       <View style={styles.form}>
         <Input
@@ -41,22 +43,12 @@ export const SignIn = ({navigation}: AuthNavigationProps<'SignIn'>) => {
           placeholder="Password"
           secureTextEntry
         />
-        <View
-          style={{
-            alignSelf: 'flex-start',
-          }}>
-          <View style={styles.checkView}>
-            <Pressable style={{marginRight: 6}}>
-              <Image source={checkIcon} />
-            </Pressable>
-            <Text>Keep me signed in</Text>
-          </View>
-          <View style={styles.checkView}>
-            <Pressable>
-              <Image source={checkIcon} />
-            </Pressable>
-            <Text>Keep me signed in</Text>
-          </View>
+        <View style={styles.checkView}>
+          <Checkbox label="Keep me signed in" onPress={() => null} checked />
+          <Checkbox
+            label="Email Me About Special Pricing"
+            onPress={() => null}
+          />
         </View>
       </View>
       <View style={styles.buttonsContainer}>
@@ -64,7 +56,7 @@ export const SignIn = ({navigation}: AuthNavigationProps<'SignIn'>) => {
           buttonVariant="buttonPrimary"
           textVariant="buttonPrimary"
           onPress={() => navigation.navigate('OnboardingSecond')}
-          label={'Login'}
+          label={'Create account'}
         />
       </View>
     </View>

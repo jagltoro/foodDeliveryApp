@@ -32,10 +32,7 @@ export const useCreateAccountStyle = createStyles(
       alignItems: 'center',
     },
     checkView: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginVertical: theme.spacing.s,
+      alignSelf: 'flex-start',
     },
     background: {
       position: 'absolute',
