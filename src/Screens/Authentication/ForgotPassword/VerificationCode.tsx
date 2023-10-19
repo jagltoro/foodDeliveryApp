@@ -1,8 +1,10 @@
 import * as React from 'react';
-import {Image, Text, View, TextInput, Pressable} from 'react-native';
+import {Image, View} from 'react-native';
 
 import {BackgroundPattern} from '@src/Assets';
 import {AuthNavigationProps} from '@src/Routes/Navigation';
+import {ThemedText} from '@src/Config/Theme';
+import {BackButton, Button, Input} from '@src/Components';
 
 import {useAuthenticationStyle} from '../authentication.styles';
 
@@ -15,20 +17,25 @@ export const VerificationCode = ({
   return (
     <View style={styles.container}>
       <Image source={BackgroundPattern} style={styles.backgroundRotated} />
+      <BackButton onPress={() => navigation.goBack()} />
+
       <View style={styles.form}>
-        <Text style={styles.formTitle}>Enter 4-digit verification code</Text>
-        <TextInput
+        <ThemedText variant="title" marginBottom="xl">
+          Enter 4-digit verification code
+        </ThemedText>
+        <Input
           style={styles.inputCode}
           onChangeText={setCode}
           value={code}
           maxLength={4}
           keyboardType="number-pad"
         />
-        <Pressable
-          style={styles.button}
-          onPress={() => navigation.navigate('ResetPassword')}>
-          <Text style={styles.buttonText}>Reset Password</Text>
-        </Pressable>
+        <Button
+          buttonVariant="buttonPrimary"
+          textVariant="buttonPrimary"
+          label="Reset Password"
+          onPress={() => navigation.navigate('ResetPassword')}
+        />
       </View>
     </View>
   );

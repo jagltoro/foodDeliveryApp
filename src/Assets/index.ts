@@ -10,6 +10,7 @@ import facebookIcon from './icons/facebook.png';
 import googleIcon from './icons/google.png';
 import checkIcon from './icons/checkIcon.png';
 import checkedIcon from './icons/checkedIcon.png';
+import backOrangeIcon from './icons/backOrangeIcon.png';
 
 export {
   BackgroundPattern,
@@ -23,4 +24,5 @@ export {
   googleIcon,
   checkIcon,
   checkedIcon,
+  backOrangeIcon,
 };

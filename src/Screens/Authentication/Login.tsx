@@ -1,12 +1,13 @@
 import * as React from 'react';
-import {Image, Text, View, TextInput, Pressable} from 'react-native';
+import {Image, Text, View, Pressable} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import {BackgroundPattern, facebookIcon, googleIcon} from '@src/Assets';
 import {AuthNavigationProps} from '@src/Routes/Navigation';
 
 import {useAuthenticationStyle} from './authentication.styles';
-import {Button, LogoWithText} from '@src/Components';
+import {Button, Input, LogoWithText} from '@src/Components';
+import {ThemedText} from '@src/Config/Theme';
 
 export const Login = ({navigation}: AuthNavigationProps<'Login'>) => {
   const [username, setUsername] = React.useState('');
@@ -24,21 +25,19 @@ export const Login = ({navigation}: AuthNavigationProps<'Login'>) => {
       />
       <LogoWithText />
       <View style={styles.form}>
-        <TextInput
-          style={styles.input}
+        <Input
           onChangeText={setUsername}
           value={username}
           placeholder="Email or Username"
         />
-        <TextInput
-          style={styles.input}
+        <Input
           onChangeText={setPassword}
           value={password}
           placeholder="Password"
           secureTextEntry
         />
         <View style={styles.socialLogin}>
-          <Text style={styles.continueWithSocial}>Or Continue With</Text>
+          <ThemedText variant="subtitle">Or Continue With</ThemedText>
           <View style={styles.buttonSocialContainer}>
             <Pressable
               style={styles.buttonSocial}
@@ -62,7 +61,7 @@ export const Login = ({navigation}: AuthNavigationProps<'Login'>) => {
         <Button
           buttonVariant="buttonSecondary"
           textVariant="buttonSecondary"
-          onPress={() => navigation.navigate('SignUp')}
+          onPress={() => navigation.navigate('SignIn')}
           label={'Sign Up'}
         />
         <Button

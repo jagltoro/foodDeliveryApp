@@ -6,7 +6,6 @@ import {
   OnboardFirst,
   OnboardSecond,
   Login,
-  SignUp,
   ForgotPassword,
   CreateAccount,
 } from '../Screens';
@@ -23,7 +22,6 @@ function AuthenticationRouter() {
       <Stack.Screen name="OnboardingFirst" component={OnboardFirst} />
       <Stack.Screen name="OnboardingSecond" component={OnboardSecond} />
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordRouter} />
       <Stack.Screen name="SignIn" component={CreateAccount.SignIn} />
     </Stack.Navigator>

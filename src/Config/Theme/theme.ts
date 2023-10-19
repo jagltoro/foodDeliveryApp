@@ -12,8 +12,10 @@ const palette = {
   border: '#FFFFFF',
   notification: '#FFFFFF',
   green: '#15BE77',
+  orange: '#DA6317',
   buttonPrimary: '#15BE77',
   buttonSecondary: 'rgba(255,255,255,0.1)',
+  buttonBack: 'rgba(255,144,18,0.1)',
 };
 
 export const theme = createTheme({

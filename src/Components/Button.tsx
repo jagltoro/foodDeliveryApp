@@ -7,7 +7,7 @@ interface ButtonProps {
   onPress: () => void;
   label: string;
   buttonVariant: keyof typeof buttonVariants;
-  textVariant: keyof typeof textVariants;
+  textVariant?: keyof typeof textVariants;
 }
 
 export const Button = ({
@@ -16,9 +16,11 @@ export const Button = ({
   buttonVariant,
   textVariant,
 }: ButtonProps) => {
+  const textStyle = textVariant || buttonVariant;
+
   return (
     <ThemedButton variant={buttonVariant} onPress={onPress}>
-      <ThemedText variant={textVariant}>{label}</ThemedText>
+      <ThemedText variant={textStyle}>{label}</ThemedText>
     </ThemedButton>
   );
 };

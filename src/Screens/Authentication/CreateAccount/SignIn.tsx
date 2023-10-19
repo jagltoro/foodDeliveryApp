@@ -1,18 +1,19 @@
 import * as React from 'react';
-import {Image, Text, View, TextInput, Pressable} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import {Image, Text, View, Pressable} from 'react-native';
 
 import {BackgroundPattern, checkIcon, checkedIcon} from '@src/Assets';
 import {AuthNavigationProps} from '@src/Routes/Navigation';
 
-import {useAuthenticationStyle} from '../authentication.styles';
-import {Button, LogoWithText} from '@src/Components';
+import {useCreateAccountStyle} from './createAccount.styles';
+import {BackButton, Button, Input, LogoWithText} from '@src/Components';
+import LinearGradient from 'react-native-linear-gradient';
+import {ThemedText} from '@src/Config/Theme';
 
 export const SignIn = ({navigation}: AuthNavigationProps<'SignIn'>) => {
   const [username, setUsername] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const styles = useAuthenticationStyle();
+  const styles = useCreateAccountStyle();
 
   return (
     <View style={styles.container}>
@@ -24,21 +25,17 @@ export const SignIn = ({navigation}: AuthNavigationProps<'SignIn'>) => {
         end={{x: 0, y: 0.5}}
       />
       <LogoWithText />
+      <View>
+        <ThemedText variant="title">Sign Up for free</ThemedText>
+      </View>
       <View style={styles.form}>
-        <TextInput
-          style={styles.input}
+        <Input
           onChangeText={setUsername}
           value={username}
           placeholder="Username"
         />
-        <TextInput
-          style={styles.input}
-          onChangeText={setEmail}
-          value={email}
-          placeholder="Email"
-        />
-        <TextInput
-          style={styles.input}
+        <Input onChangeText={setEmail} value={email} placeholder="Email" />
+        <Input
           onChangeText={setPassword}
           value={password}
           placeholder="Password"
@@ -62,13 +59,7 @@ export const SignIn = ({navigation}: AuthNavigationProps<'SignIn'>) => {
           </View>
         </View>
       </View>
-      <View style={styles.buttonsContainerRow}>
-        <Button
-          buttonVariant="buttonSecondary"
-          textVariant="buttonSecondary"
-          onPress={() => navigation.navigate('SignUp')}
-          label={'Sign Up'}
-        />
+      <View style={styles.buttonsContainer}>
         <Button
           buttonVariant="buttonPrimary"
           textVariant="buttonPrimary"

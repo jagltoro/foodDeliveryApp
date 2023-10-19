@@ -1,4 +1,19 @@
 export const textVariants = {
+  titleFoodNinja: {
+    fontFamily: 'Viga-Regular',
+    fontSize: 40,
+    color: 'green',
+  },
+  title: {
+    fontFamily: 'BentonSans-Bold',
+    fontSize: 25,
+    color: 'white',
+  },
+  subtitle: {
+    fontFamily: 'Inter-SemiBold',
+    fontSize: 13,
+    color: 'white',
+  },
   buttonLabel: {
     fontSize: 16,
     fontFamily: 'BentonSans-Bold',
@@ -10,16 +25,6 @@ export const textVariants = {
     fontFamily: 'BentonSans-Bold',
     color: 'green',
     fontWeight: 'bold',
-  },
-  title: {
-    fontFamily: 'Viga-Regular',
-    fontSize: 40,
-    color: 'green',
-  },
-  subtitle: {
-    fontFamily: 'Inter-SemiBold',
-    fontSize: 13,
-    color: 'white',
   },
   default: {
     color: 'white',

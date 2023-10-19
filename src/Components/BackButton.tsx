@@ -1,37 +1,34 @@
 import * as React from 'react';
-import {Pressable} from 'react-native';
-import {
-  useRestyle,
-  spacing,
-  backgroundColor,
-  SpacingProps,
-  BorderProps,
-  BackgroundColorProps,
-  composeRestyleFunctions,
-} from '@shopify/restyle';
+import {Image, Pressable, StyleProp, ViewStyle} from 'react-native';
 
-import {Theme, ThemedText} from '@src/Config/Theme';
+import {backOrangeIcon} from '@src/Assets';
+import {createStyles} from '@src/Config/Theme';
+import {ThemeConfig} from '@src/Config';
 
-type RestyleProps = SpacingProps<Theme> &
-  BorderProps<Theme> &
-  BackgroundColorProps<Theme>;
-
-const restyleFunctions = composeRestyleFunctions<Theme, RestyleProps>([
-  spacing,
-  backgroundColor,
-]);
-
-type Props = RestyleProps & {
+interface BackButtonProps {
   onPress: () => void;
-  label: string;
-};
+  style?: StyleProp<ViewStyle>;
+}
 
-export const Button = ({onPress, label, ...rest}: Props) => {
-  const props = useRestyle(restyleFunctions, rest);
+export const BackButton = ({onPress, style}: BackButtonProps) => {
+  const styles = useStyle();
 
   return (
-    <Pressable onPress={onPress} {...props}>
-      <ThemedText variant="buttonLabel">{label}</ThemedText>
+    <Pressable onPress={onPress} style={[styles.button, style]}>
+      <Image source={backOrangeIcon} />
     </Pressable>
   );
 };
+
+const useStyle = createStyles((theme: ThemeConfig.Theme) => ({
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: theme.colors.buttonBack,
+    padding: theme.spacing.m,
+    borderRadius: theme.borderRadii.s,
+    position: 'absolute',
+    top: theme.spacing.m,
+    left: theme.spacing.m,
+  },
+}));

@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {Image, Text, View, TextInput} from 'react-native';
+import {Image, View} from 'react-native';
 
-import {Button} from '@src/Components';
+import {BackButton, Button, Input} from '@src/Components';
 import {BackgroundPattern} from '@src/Assets';
 import {AuthNavigationProps} from '@src/Routes/Navigation';
 
 import {useAuthenticationStyle} from '../authentication.styles';
+import {ThemedText} from '@src/Config/Theme';
 
 export const ForgotPassword = ({
   navigation,
@@ -16,12 +17,13 @@ export const ForgotPassword = ({
   return (
     <View style={styles.container}>
       <Image source={BackgroundPattern} style={styles.backgroundRotated} />
+      <BackButton onPress={() => navigation.goBack()} />
+
       <View style={styles.form}>
-        <Text style={styles.formTitle}>
+        <ThemedText variant="title" marginBottom="xl">
           Enter your email to send a verification code
-        </Text>
-        <TextInput
-          style={styles.input}
+        </ThemedText>
+        <Input
           onChangeText={setUsername}
           value={username}
           placeholder="Email"

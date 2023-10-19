@@ -1,11 +1,13 @@
 import * as React from 'react';
-import {Image, Text, View, Pressable} from 'react-native';
+import {Image, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import {BackgroundPattern, SuccessImage} from '@src/Assets';
 import {AuthNavigationProps} from '@src/Routes/Navigation';
 
 import {useAuthenticationStyle} from '../authentication.styles';
+import {ThemedText} from '@src/Config/Theme';
+import {Button} from '@src/Components';
 
 export const Confirmation = ({
   navigation,
@@ -23,13 +25,14 @@ export const Confirmation = ({
       />
       <Image source={SuccessImage} />
       <View style={styles.information}>
-        <Text style={styles.title}>Congrats!</Text>
-        <Text style={styles.formTitle}>Password was reset</Text>
-        <Pressable
-          style={styles.button}
-          onPress={() => navigation.navigate('Login')}>
-          <Text style={styles.buttonText}>Login</Text>
-        </Pressable>
+        <ThemedText variant="titleFoodNinja">Congrats!</ThemedText>
+        <ThemedText variant="title">Password was reset</ThemedText>
+        <Button
+          buttonVariant="buttonPrimary"
+          textVariant="buttonPrimary"
+          label="Login"
+          onPress={() => navigation.navigate('Login')}
+        />
       </View>
     </View>
   );
