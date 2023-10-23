@@ -1,18 +1,22 @@
 import * as React from 'react';
 import {Image, View} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
+import {ThemedText} from '@src/Config/Theme';
 import {BackgroundPattern} from '@src/Assets';
-import {AuthNavigationProps} from '@src/Routes/Navigation';
+import {CreateAccountNavigationProps} from '@src/Routes/Partials';
+import {Button, Checkbox, Input, LogoWithText} from '@src/Components';
 
 import {useCreateAccountStyle} from './createAccount.styles';
-import {Button, Checkbox, Input, LogoWithText} from '@src/Components';
-import LinearGradient from 'react-native-linear-gradient';
-import {ThemedText} from '@src/Config/Theme';
 
-export const SignIn = ({navigation}: AuthNavigationProps<'SignIn'>) => {
+export const SignIn = ({
+  navigation,
+}: CreateAccountNavigationProps<'SignIn'>) => {
   const [username, setUsername] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [remember, setRemember] = React.useState(true);
+  const [promotions, setPromotions] = React.useState(true);
   const styles = useCreateAccountStyle();
 
   return (
@@ -44,10 +48,15 @@ export const SignIn = ({navigation}: AuthNavigationProps<'SignIn'>) => {
           secureTextEntry
         />
         <View style={styles.checkView}>
-          <Checkbox label="Keep me signed in" onPress={() => null} checked />
+          <Checkbox
+            label="Keep me signed in"
+            onPress={() => setRemember(!remember)}
+            checked={remember}
+          />
           <Checkbox
             label="Email Me About Special Pricing"
-            onPress={() => null}
+            onPress={() => setPromotions(!promotions)}
+            checked={promotions}
           />
         </View>
       </View>
@@ -55,7 +64,7 @@ export const SignIn = ({navigation}: AuthNavigationProps<'SignIn'>) => {
         <Button
           buttonVariant="buttonPrimary"
           textVariant="buttonPrimary"
-          onPress={() => navigation.navigate('OnboardingSecond')}
+          onPress={() => navigation.navigate('PersonalData')}
           label={'Create account'}
         />
       </View>

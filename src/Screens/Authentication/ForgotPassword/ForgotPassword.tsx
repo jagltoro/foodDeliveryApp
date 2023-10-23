@@ -1,16 +1,16 @@
 import * as React from 'react';
 import {Image, View} from 'react-native';
 
-import {BackButton, Button, Input} from '@src/Components';
+import {ThemedText} from '@src/Config/Theme';
 import {BackgroundPattern} from '@src/Assets';
-import {AuthNavigationProps} from '@src/Routes/Navigation';
+import {BackButton, Button, Input} from '@src/Components';
+import {ForgotPasswordNavigationProps} from '@src/Routes/Partials';
 
 import {useAuthenticationStyle} from '../authentication.styles';
-import {ThemedText} from '@src/Config/Theme';
 
 export const ForgotPassword = ({
   navigation,
-}: AuthNavigationProps<'ForgotPassword'>) => {
+}: ForgotPasswordNavigationProps<'ForgotPassword'>) => {
   const [username, setUsername] = React.useState('');
   const styles = useAuthenticationStyle();
 

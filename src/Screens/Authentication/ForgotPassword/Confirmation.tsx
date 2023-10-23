@@ -2,16 +2,16 @@ import * as React from 'react';
 import {Image, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
+import {Button} from '@src/Components';
+import {ThemedText} from '@src/Config/Theme';
 import {BackgroundPattern, SuccessImage} from '@src/Assets';
-import {AuthNavigationProps} from '@src/Routes/Navigation';
+import {ForgotPasswordNavigationProps} from '@src/Routes/Partials';
 
 import {useAuthenticationStyle} from '../authentication.styles';
-import {ThemedText} from '@src/Config/Theme';
-import {Button} from '@src/Components';
 
 export const Confirmation = ({
   navigation,
-}: AuthNavigationProps<'Confirmation'>) => {
+}: ForgotPasswordNavigationProps<'Confirmation'>) => {
   const styles = useAuthenticationStyle();
 
   return (

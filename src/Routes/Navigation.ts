@@ -29,11 +29,8 @@ export type AuthenticationRoutes = {
   OnboardingSecond: undefined;
   Login: undefined;
   SignUp: undefined;
-  ForgotPassword: undefined;
-  VerificationCode: undefined;
-  ResetPassword: undefined;
-  Confirmation: undefined;
-  SignIn: undefined;
+  ForgotPasswordNavigation: undefined;
+  CreateAccountNavigation: undefined;
 };
 
 export type HomeRoutes = {

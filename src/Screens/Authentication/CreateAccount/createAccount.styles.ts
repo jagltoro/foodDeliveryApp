@@ -11,12 +11,20 @@ export const useCreateAccountStyle = createStyles(
       width: '100%',
       paddingHorizontal: theme.spacing.l,
     },
+    backgroundRotated: {
+      position: 'absolute',
+      top: -450,
+      right: -250,
+      transform: [{rotateZ: '30deg'}],
+      opacity: 0.3,
+    },
     backButton: {
       position: 'absolute',
       left: theme.spacing.l,
       top: theme.spacing.m,
     },
     titleContainer: {
+      flex: 1 / 4,
       width: '100%',
       marginBottom: theme.spacing.l,
     },
@@ -27,9 +35,8 @@ export const useCreateAccountStyle = createStyles(
       backgroundColor: '#000000',
     },
     buttonsContainer: {
-      flex: 1 / 4,
-      justifyContent: 'center',
-      alignItems: 'center',
+      position: 'absolute',
+      bottom: 0,
     },
     checkView: {
       alignSelf: 'flex-start',

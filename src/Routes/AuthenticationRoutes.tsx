@@ -1,15 +1,9 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {
-  Splash,
-  OnboardFirst,
-  OnboardSecond,
-  Login,
-  ForgotPassword,
-  CreateAccount,
-} from '../Screens';
+import {Splash, OnboardFirst, OnboardSecond, Login} from '../Screens';
 import {AuthenticationRoutes, navigatorOptions} from './Navigation';
+import {ForgotPasswordRouter, CreateAccountRouter} from './Partials';
 
 const Stack = createNativeStackNavigator<AuthenticationRoutes>();
 
@@ -22,34 +16,14 @@ function AuthenticationRouter() {
       <Stack.Screen name="OnboardingFirst" component={OnboardFirst} />
       <Stack.Screen name="OnboardingSecond" component={OnboardSecond} />
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="ForgotPassword" component={ForgotPasswordRouter} />
-      <Stack.Screen name="SignIn" component={CreateAccount.SignIn} />
-    </Stack.Navigator>
-  );
-}
-
-function ForgotPasswordRouter() {
-  return (
-    <Stack.Navigator
-      initialRouteName="ForgotPassword"
-      screenOptions={navigatorOptions}>
       <Stack.Screen
-        name="ForgotPassword"
-        component={ForgotPassword.ForgotPassword}
+        name="ForgotPasswordNavigation"
+        component={ForgotPasswordRouter}
       />
       <Stack.Screen
-        name="VerificationCode"
-        component={ForgotPassword.VerificationCode}
+        name="CreateAccountNavigation"
+        component={CreateAccountRouter}
       />
-      <Stack.Screen
-        name="ResetPassword"
-        component={ForgotPassword.ResetPassword}
-      />
-      <Stack.Screen
-        name="Confirmation"
-        component={ForgotPassword.Confirmation}
-      />
-      <Stack.Screen name="SignIn" component={CreateAccount.SignIn} />
     </Stack.Navigator>
   );
 }
