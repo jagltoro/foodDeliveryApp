@@ -1,13 +1,12 @@
 import * as React from 'react';
-import {Image, View} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import {View} from 'react-native';
 
 import {ThemedText} from '@src/Config/Theme';
-import {BackgroundPattern} from '@src/Assets';
 import {CreateAccountNavigationProps} from '@src/Routes/Partials';
 import {Button, Checkbox, Input, LogoWithText} from '@src/Components';
 
 import {useCreateAccountStyle} from './createAccount.styles';
+import {ScreenContainer} from '@src/Screens';
 
 export const SignIn = ({
   navigation,
@@ -20,14 +19,7 @@ export const SignIn = ({
   const styles = useCreateAccountStyle();
 
   return (
-    <View style={styles.container}>
-      <Image source={BackgroundPattern} style={styles.background} />
-      <LinearGradient
-        colors={['transparent', '#000000']}
-        style={styles.linearGradient}
-        start={{x: 0, y: 0}}
-        end={{x: 0, y: 0.5}}
-      />
+    <ScreenContainer>
       <LogoWithText />
       <View>
         <ThemedText variant="title" marginBottom="l">
@@ -68,6 +60,6 @@ export const SignIn = ({
           label={'Create account'}
         />
       </View>
-    </View>
+    </ScreenContainer>
   );
 };

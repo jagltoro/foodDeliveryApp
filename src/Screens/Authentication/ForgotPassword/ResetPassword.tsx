@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {Image, View} from 'react-native';
+import {View} from 'react-native';
+import {ScreenContainer} from '@src/Screens';
 
 import {ThemedText} from '@src/Config/Theme';
-import {BackgroundPattern} from '@src/Assets';
 import {Button, Input} from '@src/Components';
 import {ForgotPasswordNavigationProps} from '@src/Routes/Partials';
 
@@ -16,8 +16,7 @@ export const ResetPassword = ({
   const styles = useAuthenticationStyle();
 
   return (
-    <View style={styles.container}>
-      <Image source={BackgroundPattern} style={styles.backgroundRotated} />
+    <ScreenContainer>
       <View style={styles.titleContainer}>
         <ThemedText variant="title" marginBottom="m">
           Reset your password
@@ -46,6 +45,6 @@ export const ResetPassword = ({
           onPress={() => navigation.navigate('Confirmation')}
         />
       </View>
-    </View>
+    </ScreenContainer>
   );
 };

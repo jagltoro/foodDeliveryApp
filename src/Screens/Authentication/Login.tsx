@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Image, Text, View, Pressable} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import {ScreenContainer} from '../ScreenContainer';
 
-import {BackgroundPattern, facebookIcon, googleIcon} from '@src/Assets';
+import {facebookIcon, googleIcon} from '@src/Assets';
 import {AuthNavigationProps} from '@src/Routes/Navigation';
 
 import {useAuthenticationStyle} from './authentication.styles';
@@ -15,14 +15,7 @@ export const Login = ({navigation}: AuthNavigationProps<'Login'>) => {
   const styles = useAuthenticationStyle();
 
   return (
-    <View style={styles.container}>
-      <Image source={BackgroundPattern} style={styles.background} />
-      <LinearGradient
-        colors={['transparent', '#000000']}
-        style={styles.linearGradient}
-        start={{x: 0, y: 0}}
-        end={{x: 0, y: 0.5}}
-      />
+    <ScreenContainer>
       <LogoWithText />
       <View style={styles.form}>
         <Input
@@ -52,7 +45,8 @@ export const Login = ({navigation}: AuthNavigationProps<'Login'>) => {
               <Text style={styles.buttonText}>Google</Text>
             </Pressable>
           </View>
-          <Pressable onPress={() => navigation.navigate('ForgotPassword')}>
+          <Pressable
+            onPress={() => navigation.navigate('ForgotPasswordNavigation')}>
             <Text style={styles.forgotPassword}>Forgot Your Password?</Text>
           </Pressable>
         </View>
@@ -61,16 +55,16 @@ export const Login = ({navigation}: AuthNavigationProps<'Login'>) => {
         <Button
           buttonVariant="buttonSecondary"
           textVariant="buttonSecondary"
-          onPress={() => navigation.navigate('SignIn')}
+          onPress={() => navigation.navigate('CreateAccountNavigation')}
           label={'Sign Up'}
         />
         <Button
           buttonVariant="buttonPrimary"
           textVariant="buttonPrimary"
-          onPress={() => navigation.navigate('SignIn')}
+          onPress={() => navigation.navigate('CreateAccountNavigation')}
           label={'Login'}
         />
       </View>
-    </View>
+    </ScreenContainer>
   );
 };

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {Image, View} from 'react-native';
+import {View} from 'react-native';
+import {ScreenContainer} from '@src/Screens';
 
 import {ThemedText} from '@src/Config/Theme';
-import {BackgroundPattern} from '@src/Assets';
 import {BackButton, Button, Input} from '@src/Components';
 import {ForgotPasswordNavigationProps} from '@src/Routes/Partials';
 
@@ -15,8 +15,7 @@ export const ForgotPassword = ({
   const styles = useAuthenticationStyle();
 
   return (
-    <View style={styles.container}>
-      <Image source={BackgroundPattern} style={styles.backgroundRotated} />
+    <ScreenContainer isRotated>
       <BackButton onPress={() => navigation.goBack()} />
 
       <View style={styles.form}>
@@ -35,6 +34,6 @@ export const ForgotPassword = ({
           onPress={() => navigation.navigate('VerificationCode')}
         />
       </View>
-    </View>
+    </ScreenContainer>
   );
 };

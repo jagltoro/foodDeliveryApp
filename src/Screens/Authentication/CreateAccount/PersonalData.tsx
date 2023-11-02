@@ -1,22 +1,21 @@
 import * as React from 'react';
-import {Image, View} from 'react-native';
+import {View} from 'react-native';
+import {Formik} from 'formik';
 
 import {ThemedText} from '@src/Config/Theme';
-import {BackgroundPattern} from '@src/Assets';
 import {CreateAccountNavigationProps} from '@src/Routes/Partials';
 import {BackButton, Button, Input} from '@src/Components';
 
 import {useCreateAccountStyle} from './createAccount.styles';
+import {ScreenContainer} from '@src/Screens';
 
 export const PersonalData = ({
   navigation,
 }: CreateAccountNavigationProps<'PersonalData'>) => {
-  const [username, setUsername] = React.useState('');
   const styles = useCreateAccountStyle();
 
   return (
-    <View style={styles.container}>
-      <Image source={BackgroundPattern} style={styles.backgroundRotated} />
+    <ScreenContainer isRotated>
       <BackButton onPress={() => navigation.goBack()} />
       <View style={styles.titleContainer}>
         <ThemedText variant="title" marginBottom="xl">
@@ -26,31 +25,40 @@ export const PersonalData = ({
           This data will be displayed in your account profile for security
         </ThemedText>
       </View>
-      <View style={styles.form}>
-        <Input
-          onChangeText={setUsername}
-          value={username}
-          placeholder="Email"
-        />
-        <Input
-          onChangeText={setUsername}
-          value={username}
-          placeholder="Email"
-        />
-        <Input
-          onChangeText={setUsername}
-          value={username}
-          placeholder="Email"
-        />
-      </View>
-      <View style={styles.buttonsContainer}>
-        <Button
-          buttonVariant="buttonPrimary"
-          textVariant="buttonPrimary"
-          label="Send verification code"
-          onPress={() => navigation.navigate('PersonalData')}
-        />
-      </View>
-    </View>
+      <Formik
+        initialValues={{username: '', email: '', password: ''}}
+        onSubmit={() => navigation.navigate('PersonalData')}>
+        {({handleChange, handleBlur, handleSubmit, values}) => (
+          <View>
+            <View style={styles.form}>
+              <Input
+                onChangeText={handleChange('username')}
+                onBlur={handleBlur('username')}
+                value={values.username}
+              />
+              <Input
+                onChangeText={handleChange('email')}
+                onBlur={handleBlur('email')}
+                value={values.email}
+              />
+              <Input
+                onChangeText={handleChange('password')}
+                onBlur={handleBlur('password')}
+                value={values.password}
+                secureTextEntry
+              />
+            </View>
+            <View style={styles.buttonsContainer}>
+              <Button
+                buttonVariant="buttonPrimary"
+                textVariant="buttonPrimary"
+                label="Send verification code"
+                onPress={handleSubmit}
+              />
+            </View>
+          </View>
+        )}
+      </Formik>
+    </ScreenContainer>
   );
 };
