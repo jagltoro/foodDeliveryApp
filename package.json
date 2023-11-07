@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.19.1",
-    "@react-navigation/bottom-tabs": "^6.5.8",
+    "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native-stack": "^6.9.13",
     "@shopify/restyle": "^2.4.2",
     "formik": "^2.4.5",

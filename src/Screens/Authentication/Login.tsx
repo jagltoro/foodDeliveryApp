@@ -61,7 +61,7 @@ export const Login = ({navigation}: AuthNavigationProps<'Login'>) => {
         <Button
           buttonVariant="buttonPrimary"
           textVariant="buttonPrimary"
-          onPress={() => navigation.navigate('CreateAccountNavigation')}
+          onPress={() => navigation.navigate('Main')}
           label={'Login'}
         />
       </View>

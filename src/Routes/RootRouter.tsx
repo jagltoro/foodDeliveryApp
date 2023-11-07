@@ -6,6 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {ThemeConfig} from '@src/Config';
 import AuthenticationRouter from './AuthenticationRoutes';
 import {AppRoutes, navigatorOptions} from './Navigation';
+import {MainNavigationRouter} from './Partials';
 
 const Stack = createNativeStackNavigator<AppRoutes>();
 
@@ -19,10 +20,9 @@ function RootRouter() {
 
   return (
     <NavigationContainer theme={navigationTheme}>
-      <Stack.Navigator
-        initialRouteName="Authentication"
-        screenOptions={navigatorOptions}>
+      <Stack.Navigator initialRouteName="Main" screenOptions={navigatorOptions}>
         <Stack.Screen name="Authentication" component={AuthenticationRouter} />
+        <Stack.Screen name="Main" component={MainNavigationRouter} />
       </Stack.Navigator>
     </NavigationContainer>
   );

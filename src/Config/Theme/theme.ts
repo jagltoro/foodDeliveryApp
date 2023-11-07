@@ -16,6 +16,7 @@ const palette = {
   buttonPrimary: '#15BE77',
   buttonSecondary: 'rgba(255,255,255,0.1)',
   buttonBack: 'rgba(255,144,18,0.1)',
+  tabBarBg: '#252525',
 };
 
 export const theme = createTheme({

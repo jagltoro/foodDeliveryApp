@@ -12,6 +12,18 @@ import checkIcon from './icons/checkIcon.png';
 import checkedIcon from './icons/checkedIcon.png';
 import backOrangeIcon from './icons/backOrangeIcon.png';
 
+import homeActiveIcon from './icons/home.png';
+import homeInactiveIcon from './icons/home.png';
+
+import profileActiveIcon from './icons/profile.png';
+import profileInactiveIcon from './icons/profile.png';
+
+import cartActiveIcon from './icons/cart.png';
+import cartInactiveIcon from './icons/cart.png';
+
+import chatActiveIcon from './icons/chat.png';
+import chatInactiveIcon from './icons/chat.png';
+
 export {
   BackgroundPattern,
   LogoColor,
@@ -25,4 +37,12 @@ export {
   checkIcon,
   checkedIcon,
   backOrangeIcon,
+  homeActiveIcon,
+  homeInactiveIcon,
+  profileActiveIcon,
+  profileInactiveIcon,
+  cartActiveIcon,
+  cartInactiveIcon,
+  chatActiveIcon,
+  chatInactiveIcon,
 };

@@ -8,7 +8,7 @@ export interface AuthNavigationProps<
 > {
   navigation: CompositeNavigationProp<
     NativeStackNavigationProp<AuthenticationRoutes, RouteName>,
-    BottomTabNavigationProp<AppRoutes, 'Home'>
+    BottomTabNavigationProp<AppRoutes, 'Main'>
   >;
   route: RouteProp<AuthenticationRoutes, RouteName>;
 }
@@ -20,7 +20,7 @@ export interface HomeNavigationProps<RouteName extends keyof HomeRoutes> {
 
 export type AppRoutes = {
   Authentication: undefined;
-  Home: undefined;
+  Main: undefined;
 };
 
 export type AuthenticationRoutes = {
