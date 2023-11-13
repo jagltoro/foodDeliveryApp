@@ -19,4 +19,14 @@ export const buttonVariants = {
     maxHeight: 60,
     alignItems: 'center',
   },
+  buttonWhite: {
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    marginTop: 'l',
+    paddingVertical: 'm',
+    paddingHorizontal: 'l',
+    borderRadius: 'm',
+    maxHeight: 60,
+    alignItems: 'center',
+  },
 };

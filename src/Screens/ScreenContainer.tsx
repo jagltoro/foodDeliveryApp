@@ -41,17 +41,15 @@ export const useScreenContainerStyle = createStyles(
   (theme: ThemeConfig.Theme) => ({
     container: {
       flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
       width: '100%',
-      paddingHorizontal: theme.spacing.l,
+      paddingHorizontal: theme.spacing.s,
     },
     backgroundRotated: {
       position: 'absolute',
       top: -450,
       right: -250,
       transform: [{rotateZ: '30deg'}],
-      opacity: 0.3,
+      opacity: 0.2,
     },
     linearGradient: {
       position: 'absolute',
