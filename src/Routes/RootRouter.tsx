@@ -20,7 +20,9 @@ function RootRouter() {
 
   return (
     <NavigationContainer theme={navigationTheme}>
-      <Stack.Navigator initialRouteName="Main" screenOptions={navigatorOptions}>
+      <Stack.Navigator
+        initialRouteName="Authentication"
+        screenOptions={navigatorOptions}>
         <Stack.Screen name="Authentication" component={AuthenticationRouter} />
         <Stack.Screen name="Main" component={MainNavigationRouter} />
       </Stack.Navigator>

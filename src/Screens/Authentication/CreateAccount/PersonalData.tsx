@@ -29,22 +29,25 @@ export const PersonalData = ({
         initialValues={{username: '', email: '', password: ''}}
         onSubmit={() => navigation.navigate('PersonalData')}>
         {({handleChange, handleBlur, handleSubmit, values}) => (
-          <View>
+          <>
             <View style={styles.form}>
               <Input
                 onChangeText={handleChange('username')}
                 onBlur={handleBlur('username')}
                 value={values.username}
+                placeholder="Username"
               />
               <Input
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
                 value={values.email}
+                placeholder="Email"
               />
               <Input
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
                 value={values.password}
+                placeholder="Password"
                 secureTextEntry
               />
             </View>
@@ -56,7 +59,7 @@ export const PersonalData = ({
                 onPress={handleSubmit}
               />
             </View>
-          </View>
+          </>
         )}
       </Formik>
     </ScreenContainer>

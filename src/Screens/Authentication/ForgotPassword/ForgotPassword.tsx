@@ -15,7 +15,7 @@ export const ForgotPassword = ({
   const styles = useAuthenticationStyle();
 
   return (
-    <ScreenContainer isRotated>
+    <ScreenContainer isRotated additionalStyle={styles.container}>
       <BackButton onPress={() => navigation.goBack()} />
 
       <View style={styles.form}>

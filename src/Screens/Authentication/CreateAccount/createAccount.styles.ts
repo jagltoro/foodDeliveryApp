@@ -24,19 +24,23 @@ export const useCreateAccountStyle = createStyles(
       top: theme.spacing.m,
     },
     titleContainer: {
-      flex: 1 / 4,
       width: '100%',
+      marginTop: theme.spacing.xl,
+      paddingTop: theme.spacing.xl,
       marginBottom: theme.spacing.l,
+      justifyContent: 'flex-start',
     },
     form: {
-      flex: 2 / 4,
-      width: '100%',
+      flex: 1,
       paddingVertical: theme.spacing.s,
       backgroundColor: '#000000',
+      borderWidth: 1,
+      borderColor: 'green',
     },
     buttonsContainer: {
       position: 'absolute',
-      bottom: 0,
+      bottom: theme.spacing.s,
+      right: theme.spacing.s,
     },
     checkView: {
       alignSelf: 'flex-start',

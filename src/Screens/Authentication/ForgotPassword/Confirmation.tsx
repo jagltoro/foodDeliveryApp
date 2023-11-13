@@ -15,7 +15,7 @@ export const Confirmation = ({
   const styles = useAuthenticationStyle();
 
   return (
-    <ScreenContainer>
+    <ScreenContainer additionalStyle={styles.container}>
       <Image source={SuccessImage} />
       <View style={styles.information}>
         <ThemedText variant="titleFoodNinja">Congrats!</ThemedText>

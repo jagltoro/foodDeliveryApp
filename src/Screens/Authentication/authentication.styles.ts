@@ -5,11 +5,9 @@ import {ThemeConfig} from '@src/Config';
 export const useAuthenticationStyle = createStyles(
   (theme: ThemeConfig.Theme) => ({
     container: {
-      flex: 1,
-      alignItems: 'center',
       justifyContent: 'center',
-      width: '100%',
-      paddingHorizontal: 25,
+      alignItems: 'center',
+      flex: 1,
     },
     background: {
       position: 'absolute',

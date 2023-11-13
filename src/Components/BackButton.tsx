@@ -29,6 +29,6 @@ const useStyle = createStyles((theme: ThemeConfig.Theme) => ({
     borderRadius: theme.borderRadii.s,
     position: 'absolute',
     top: theme.spacing.m,
-    left: theme.spacing.m,
+    left: 0,
   },
 }));

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Image, View} from 'react-native';
+import {Image, View, ViewStyle} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import {ThemeConfig} from '@src/Config';
@@ -9,16 +9,18 @@ import {createStyles} from '@src/Config/Theme/createStyles';
 interface ScreenContainerProps {
   isRotated?: boolean;
   children: React.ReactNode;
+  additionalStyle?: ViewStyle;
 }
 
 export const ScreenContainer = ({
   isRotated = false,
   children,
+  additionalStyle,
 }: ScreenContainerProps) => {
   const styles = useScreenContainerStyle();
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, additionalStyle]}>
       {isRotated ? (
         <Image source={BackgroundPattern} style={styles.backgroundRotated} />
       ) : (

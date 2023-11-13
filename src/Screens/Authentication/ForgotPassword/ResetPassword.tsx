@@ -16,7 +16,7 @@ export const ResetPassword = ({
   const styles = useAuthenticationStyle();
 
   return (
-    <ScreenContainer>
+    <ScreenContainer additionalStyle={styles.container}>
       <View style={styles.titleContainer}>
         <ThemedText variant="title" marginBottom="m">
           Reset your password
